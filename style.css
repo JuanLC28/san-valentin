@@ -37,7 +37,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FADADD;
+  background: linear-gradient(135deg, #FFF5F8, #F3D1DC);
   overflow: hidden;
   z-index: 1;
 }
@@ -61,9 +61,16 @@ section {
 
 .container {
   height: 70%;
-  border: 2px solid black;
   width: 33%;
+  padding: 25px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 60px rgba(109, 46, 70, 0.15);
+  animation: fadeIn 1.2s ease;
 }
+
+
 
 .image-box {
   width: 100%;
@@ -91,7 +98,17 @@ section {
 .text-one {
   height: 20%;
   border: 0.5px solid rgb(0 0 0 / 0.164);
+  padding: 15px;
 }
+
+.text-one p {
+  font-family: "Allura", serif;
+  font-size: 1.4rem;
+  color: #6D2E46;
+  line-height: 1.4;
+}
+
+
 
 .yes-no {
   height: 30%;
@@ -100,18 +117,20 @@ section {
 
 .yes,
 .no {
-  font-family: "Allura", sans-serif;
-  font-size: 7vh;
-  font-weight: 550;
-  height: 60%;
+  font-family: "Allura", serif;
+  font-size: 5vh;
+  font-weight: 500;
+  height: 55%;
   width: 40%;
   border: none;
   cursor: pointer;
-  background-color: #FB607F;
-  scale: 1;
-  box-shadow: 4px 4px 10px black;
-  transition: scale 0.1s ease-in;
+  background: linear-gradient(135deg, #C9184A, #A4133C);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(109, 46, 70, 0.25);
+  transition: all 0.3s ease;
 }
+
 
 .yes {
   z-index: 500;
@@ -119,15 +138,17 @@ section {
 
 .yes:hover,
 .no:hover {
-  opacity: 0.95;
-  scale: 0.95;
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(109, 46, 70, 0.35);
 }
+
 
 
 @media (min-width: 200px) and (max-width: 655px) {
   .container {
     height: 80%;
     width: 98%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
 
   .gif {
@@ -135,4 +156,14 @@ section {
     width: 80%;
 
   }
+
+  .text-one p {
+    font-size: 1.6rem;
+  }
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }

@@ -7,25 +7,25 @@ const vid = document.querySelector("video");
 const steps = [
   {
     gif: "recursos/rusure.gif",
-    text: "¿Quisiste decir que SÍ, verdad? 🤨",
+    text: "¿Estás segura? Podría sorprenderte... 🌹",
     yesStyle: { height: "65%", width: "60%" },
     noStyle: { width: "30%" }
   },
   {
     gif: "recursos/3shocked-1.gif",
-    text: "Se te resbaló el dedo, ¿no? 🥹",
+    text: "Las mejores historias comienzan con un sí ✨",
     yesStyle: { height: "70%", width: "70%" },
     noStyle: { width: "20%" }
   },
   {
     gif: "recursos/4.crying.gif",
-    text: "Voy a llorar 😭",
+    text: "No todos los días se recibe una invitación así 💌",
     yesStyle: { height: "80%", width: "80%" },
     noStyle: { width: "10%", fontSize: "4vh" }
   },
   {
     gif: "recursos/5.crying.gif",
-    text: "Por favorcito 🥺😘",
+    text: "Última oportunidad... ¿aceptas? 🌹",
     yesStyle: { height: "90%", width: "96%" },
     noStyle: { display: "none" }
   }
@@ -54,20 +54,20 @@ noBtn.addEventListener("click", () => {
 
 yesBtn.addEventListener("click", () => {
   gif.src = "recursos/idc.gif";
-  text.innerHTML = "!Lo sabia! 🥰";
+  
+  text.innerHTML = `
+  Gracias por aceptar... 🌹  
+  Que este San Valentín sea el inicio de algo especial ✨
+  `;
 
-  noBtn.style.display = "none";
-  yesBtn.style.height = "90%";
-  yesBtn.style.width = "96%";
-
-  yesBtn.innerHTML = '<a href="https://web.whatsapp.com/" class="boton-final">Texteame</a>';
+  document.querySelector(".yes-no").style.display = "none";
 
   if(vid) {
     vid.style.display = "block";
-    vid.play().catch(e => console.log("Autoplay bloqueado o video no cargado"));
+    vid.play().catch(e => console.log("Autoplay bloqueado"));
     
     setTimeout(() => {
       vid.style.display = "none";
     }, 9000);
   }
-})
+});
